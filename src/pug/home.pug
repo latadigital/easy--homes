@@ -1,0 +1,104 @@
+style.
+  .calugas_two_caluga_grandeM {
+    display: none;
+  }
+  .calugas_two_dobleM {
+    display: none;
+  }
+
+  .contenido_calugas .section .title {
+    font-weight: 300;
+  }
+
+  @media only screen and (max-width: 700px) {
+    .calugas_two_caluga_grande {
+      display: none;
+    }
+    .calugas_two_caluga_grandeM {
+      display: block;
+      margin-bottom: 35px;
+    }
+    .calugas_two_doble {
+      display: none;
+    }
+    .calugas_two_dobleM {
+      display: block;
+      margin-bottom: 35px;
+    }
+  }
+
+mixin caluga(tipo, item, mobile = true)
+  div(class!=attributes.class class=`calugas_${tipo}`)&attributes(attributes)
+    a(href!=item.url)
+      .item(
+        style="border: 1px solid #ddd; border-bottom: none;"
+      )
+        picture
+          - if (mobile) {
+            source(
+              @SRCSET@=`@MEDIA_PATH@/Caluga@HOME_DATE@-${item.id < 10 ? `0${item.id}` : item.id }@FILE_TYPE@`
+              media="(min-width: 642px)"
+            )
+            source(
+              @SRCSET@=`@MEDIA_PATH@/Caluga@HOME_DATE@-${item.id < 10 ? `0${item.id}` : item.id }M@FILE_TYPE@`
+
+            )
+          - }
+          img(
+            @SRC@=`@MEDIA_PATH@/Caluga@HOME_DATE@-${item.id < 10 ? `0${item.id}` : item.id }@FILE_TYPE@`
+            alt=item.slug
+            title=item.slug
+          )
+
+.contenido-calugas 
+  .huincha_seguimiento(style="width: 99%; margin: 20px auto; display: inline-block")
+    a(
+      href="https://www.easy.cl/es/cl/easy-chile/tu-dispensador-termos"
+      target="_blank"
+      value="paga-tu-tarjeta"
+    )
+      picture
+        source(
+          srcset="https://media.easy.cl/is/image/EasySA/Huincha-Thermos"
+          width="100%"
+          media="(min-width: 642px)"
+        )
+        source(
+          srcset="https://media.easy.cl/is/image/EasySA/Huincha-ThermosM"
+          width="100%"
+        )
+        img(
+          src="https://media.easy.cl/is/image/EasySA/Huincha-Thermos"
+          width="100%"
+        )
+
+  .section
+
+    +caluga('one', {
+      id: 1,
+      slug: 'gamer',
+      url: '/tienda/categoria/especial-estudio-trabajo-gamer'
+    },
+    false)
+
+    +caluga('one', {
+      id: 2,
+      slug: 'calefaccion-electrohogar',
+      url: '/tienda/categoria/calefaccion-electrohogar'
+    },
+    false)
+
+    +caluga('one', {
+      id: 3,
+      slug: 'fitness',
+      url: '/tienda/categoria/fitness'
+    },
+    false)
+
+    +caluga('one', {
+      id: 4,
+      slug: 'mes-del-experto-herramientas',
+      url: '/tienda/categoria/mes-del-experto-herramientas'
+    },
+    false)
+

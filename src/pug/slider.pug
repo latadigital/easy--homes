@@ -1,0 +1,52 @@
+//! SLIDER
+
+mixin sliderItem(slide, key)
+  .slider__item(data-banner-duration="5s")
+    a(href=slide.url target="_self" class=`slider-slide-${key+1}`)
+      picture 
+        source(@SRCSET@=`@MEDIA_PATH@/Banner@HOME_DATE@-${key<10? `0${key+1}`: key+1}@FILE_TYPE@` media="(min-width: 642px)")
+        source(@SRCSET@=`@MEDIA_PATH@/Banner@HOME_DATE@-${key<10? `0${key+1}`: key+1}M@FILE_TYPE@`)
+        img(@SRC@=`@MEDIA_PATH@/Banner@HOME_DATE@-${key<10? `0${key+1}`: key+1}@FILE_TYPE@` alt=slide.slug)
+
+-
+  const slider = [
+    {
+      name: 'Ofertas Dormitorio',
+      slug: 'ofertas-dormitorio',
+      url: '/tienda/categoria/camas-y-colchones-8',
+    },
+    {
+      name: 'Especial Mes del Experto',
+      slug: 'mes-del-experto',
+      url: '/tienda/categoria/mes-del-experto',
+    },
+    {
+      name: 'Línea Blanca',
+      slug: 'destacado-linea-blanca',
+      url: '/tienda/categoria/destacado-linea-blanca',
+    },
+    {
+      name: 'Ropa de Cama',
+      slug: 'ropa-de-cama',
+      url: '/tienda/categoria/ropa-de-cama',
+    },
+    {
+      name: 'Porcelanatos',
+      slug: 'porcelanatos',
+      url: '/tienda/categoria/porcelanatos',
+    },
+    {
+      name: 'Maquinaría de Jardín',
+      slug: 'herramientas-de-jardin',
+      url: '/tienda/categoria/herramientas-de-jardin',
+    },
+  ]
+
+.slider
+  each slide, key in slider
+    +sliderItem(slide, key)
+.slider-nav-text
+  each slide in slider
+    .slide-text
+      span=slide.name
+//! SLIDER
