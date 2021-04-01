@@ -2,49 +2,88 @@
 
 mixin sliderItem(slide, key)
   .slider__item(data-banner-duration="5s")
-    a(href=slide.url target="_self" class=`slider-slide-${key+1}`)
+    a(href=slide.url target="_self" class=`${slide.id ? `slider-slide-${slide.id}`: ''}` value=slide.slug)
       picture 
-        source(@SRCSET@=`@MEDIA_PATH@/Banner@HOME_DATE@-${key<10? `0${key+1}`: key+1}@FILE_TYPE@` media="(min-width: 642px)")
-        source(@SRCSET@=`@MEDIA_PATH@/Banner@HOME_DATE@-${key<10? `0${key+1}`: key+1}M@FILE_TYPE@`)
-        img(@SRC@=`@MEDIA_PATH@/Banner@HOME_DATE@-${key<10? `0${key+1}`: key+1}@FILE_TYPE@` alt=slide.slug)
+        if !slide.hold
+          source(@SRCSET@=`@MEDIA_PATH@Banner@HOME_DATE@--${slide.id}@FILE_TYPE@` media="(min-width: 642px)")
+          source(@SRCSET@=`@MEDIA_PATH@Banner@HOME_DATE@--${slide.id}M@FILE_TYPE@`)
+          img(@SRC@=`@MEDIA_PATH@/Banner@HOME_DATE@--${slide.id}@FILE_TYPE@` alt=slide.slug title=slide.slug)
+        if slide.hold
+          source(@SRCSET@=`${slide.hold.image}` media="(min-width: 642px)")
+          source(@SRCSET@=`${slide.hold.imageM}`)
+          img(@SRC@=`${slide.hold.image}` alt=slide.slug title=slide.slug)
 
 -
   const slider = [
     {
-      name: 'Ofertas Dormitorio',
-      slug: 'ofertas-dormitorio',
-      url: '/tienda/categoria/camas-y-colchones-8',
+      id: 0,
+      name: 'Especial Camas y Colchones',
+      slug: 'especial-camas-colchones',
+      url: '/tienda/categoria/camas-y-colchones-8'
     },
     {
-      name: 'Especial Mes del Experto',
-      slug: 'mes-del-experto',
-      url: '/tienda/categoria/mes-del-experto',
+      id: 1,
+      name: 'Días Samsung',
+      slug: 'dias-samsung',
+      url: '/tienda/categoria/especial-samsung-1',
+      hold: {
+        image: 'https://media.easy.cl/is/image/EasySA//Banner01042021-03',
+        imageM: 'https://media.easy.cl/is/image/EasySA//Banner01042021-03M',
+      }
     },
     {
-      name: 'Línea Blanca',
-      slug: 'destacado-linea-blanca',
-      url: '/tienda/categoria/destacado-linea-blanca',
+      id: 2,
+      name: 'Muebles de Cocina',
+      slug: 'muebles-cocina'
     },
     {
-      name: 'Ropa de Cama',
-      slug: 'ropa-de-cama',
-      url: '/tienda/categoria/ropa-de-cama',
+      id: 3,
+      name: 'Baterías de Cocina',
+      slug: 'baterias-cocina',
+      url: '/tienda/categoria/dias-hogar-baterias-de-cocina',
     },
     {
-      name: 'Porcelanatos',
-      slug: 'porcelanatos',
-      url: '/tienda/categoria/porcelanatos',
+      id: 4,
+      name: 'Cerámicas',
+      slug: 'ceramicas',
+      url: '/tienda/categoria/ceramicas',
     },
     {
-      name: 'Maquinaría de Jardín',
-      slug: 'herramientas-de-jardin',
-      url: '/tienda/categoria/herramientas-de-jardin',
+      id: 5,
+      name: 'Protección Sanitaria',
+      slug: 'proteccion-sanitaria',
+      url: '/tienda/categoria/ferreteria-proteccion-sanitaria',
     },
   ]
 
 .slider
-  each slide, key in slider
-    +sliderItem(slide, key)
+  each slide in slider
+    +sliderItem(slide)
+    //- <div data-banner-duration="5s">
+    //-   <div
+    //-     style=" border: 3px dotted red; color: white; font-size: 20px; font-weight: 600; position:absolute; z-index:2; top: 40px; margin:0px auto 0px 40px; padding: 20px;"
+    //-   >
+    //-     <a href="#" style="color: #FFF;" tabindex="0"
+    //-       >Especial de Navidad</a
+    //-     >
+    //-   </div>
+    //-   <picture>
+    //-     <source
+    //-       srcset="//media.easy.cl/is/image/EasySA/Banner23102019-01"
+    //-       media="(min-width: 642px)"
+    //-     />
+    //-     <source
+    //-       srcset="//media.easy.cl/is/image/EasySA/Banner23102019-01M"
+    //-     />
+    //-     <img
+    //-       src="//media.easy.cl/is/image/EasySA/Banner23102019-01"
+    //-       alt="especial-terrazas"
+    //-       title="especial-terrazas"
+    //-     />
+    //-   </picture>
+    //- </div>
+
+
 .slider-nav-text
   each slide in slider
     .slide-text

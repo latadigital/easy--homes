@@ -12,11 +12,16 @@ html(lang="es")
       }
       .slider-nav-text {
         bottom: 0;
+        height: auto;
+        background-color: #000;
+        opacity: 1;
+        padding: 10px;
       }
       img {
         max-width: 100%;
         display: block;
       }
   body
-    include ./slider
-    include ./home
+    .route
+      include ./slider
+      include ./home
