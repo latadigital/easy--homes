@@ -166,26 +166,26 @@ mixin huincha(item, mobile = true)
 
       +caluga({
         id: 1,
+        slug: 'calefaccion',
+        url: '/tienda/categoria/calefaccion-electrohogar',
+      }).caluga--1
+
+      +caluga({
+        id: 2,
+        slug: 'muebles-oficina',
+        url: '/tienda/categoria/muebles-de-oficina?cur_page=1&cur_view=grid&bc_links=muebles&bc_names=Muebles',
+      }).caluga--1
+
+      +caluga({
+        id: 3,
         slug: 'puertas-interior',
         url: '/tienda/categoria/puertas-de-interior',
       }).caluga--1
 
       +caluga({
-        id: 2,
-        slug: 'closet',
-        url: '/categoria/closet--1?cur_page=1&cur_view=grid&bc_links=muebles|muebles-de-dormitorio-&bc_names=Muebles|Muebles+de+Dormitorio',
-      }).caluga--1
-
-      +caluga({
-        id: 3,
-        slug: 'motores-porton',
-        url: '/tienda/categoria/kit-portones-automaticos',
-      }).caluga--1
-
-      +caluga({
         id: 4,
-        slug: 'alfombras',
-        url: '/tienda/categoria/especial-alfombras-7',
+        slug: 'casas-perro',
+        url: '/tienda/categoria/mascotas-perros-accesorios-casas',
       }).caluga--1
 
   // HUINCHA 2
@@ -208,32 +208,32 @@ mixin huincha(item, mobile = true)
       +caluga({
         id: 5,
         mobile: true,
-        slug: 'comedores',
-        url: '/tienda/categoria/mesas-juegos-comedor'
+        slug: 'futones',
+        url: '/tienda/categoria/futones-5'
       }).caluga--3
       +caluga({
         id: 6,
         mobile: false,
-        slug: 'linea-blanca',
-        url: '/tienda/categoria/destacado-linea-blanca'
+        slug: 'muebles-cocina',
+        url: '/tienda/categoria/mueble-cocina'
       }, false).caluga--1
 
     // FILA CALUGAS 3
     .calugas__container
       +caluga({
         id: 7,
-        slug: 'maquinaria-jardin',
-        url: '/tienda/categoria/herramientas-de-jardin'
+        slug: 'baterias-cocina',
+        url: '/tienda/categoria/baterias-cocina'
       }, false).caluga--2-5
       +caluga({
         id: 8,
-        slug: 'calefaccion',
-        url: '/tienda/categoria/adelanto-calefaccion'
+        slug: 'electrodomesticos',
+        url: '/tienda/categoria/electrodomesticos-electrohogar?fltr_brand.keyword=Nex&cur_page=1&cur_view=grid&bc_links=Electrohogar-climatizacion&bc_names=Electrohogar+y+Climatizaci%C3%B3n&cur_pos=',
       }, false).caluga--2-5
       +caluga({
         id: 9,
-        slug: 'piso-flotante',
-        url: '/tienda/producto/1209071p'
+        slug: 'iluminacion-interior',
+        url: '/tienda/categoria/iluminacion-de-interior'
       }, false).caluga--1
 
   // HUINCHA 3
@@ -278,23 +278,23 @@ mixin huincha(item, mobile = true)
     .calugas__container
       +caluga({
         id: 10,
-        slug: 'gabinete-jardin',
-        url: 'https://www.easy.cl/tienda/producto/gabinete-rattan-plastico-65x45x99cm-keter-keter-9004239'
+        slug: 'silla-colgante',
+        url: '/tienda/producto/silla-colgante-l-chocolate-el-barco-1247327p'
       }, false).caluga--1
       +caluga({
         id: 11,
-        slug: 'iluminacion-interior',
-        url: 'https://www.easy.cl/tienda/categoria/iluminacion-de-interior'
+        slug: 'porcelanato',
+        url: '/tienda/producto/porcelanato-60-x-60-cm-sal-sol-palazzo-trav-1-44m2-1130699p'
       }, false).caluga--1
       +caluga({
         id: 12,
-        slug: 'lavadora-carga-superior',
-        url: '/tienda/producto/1280239p'
+        slug: 'refrigerador',
+        url: '/tienda/producto/side-by-side-no-frost-527-litros-mrsbs-5300-inox-midea-1197837p'
       }, false).caluga--1
       +caluga({
         id: 13,
-        slug: 'casa-perro',
-        url: 'https://www.easy.cl/tienda/producto/1255099p'
+        slug: 'sierra-circular',
+        url: '/tienda/producto/sierra-circular-1400-w-cs1004-b2c-black-decker-1174383p'
       }, false).caluga--1
 
     // FILA CALUGAS 5
@@ -302,12 +302,12 @@ mixin huincha(item, mobile = true)
       +caluga({
         id: 14,
         mobile: true,
-        slug: 'herramientas',
-        url: 'https://www.easy.cl/tienda/categoria/herramientas'
+        slug: 'alargadores-extensiones',
+        url: '/tienda/categoria/extensiones-y-alargadores'
       }).caluga--2
       +caluga({
         id: 15,
         mobile: true,
-        slug: 'repisas-estantes',
-        url: 'https://www.easy.cl/tienda/categoria/repisas-estantes-'
+        slug: 'parrillas-gas',
+        url: '/tienda/categoria/parrillas-a-gas-'
       }).caluga--2
