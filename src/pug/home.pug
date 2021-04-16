@@ -166,26 +166,38 @@ mixin huincha(item, mobile = true)
 
       +caluga({
         id: 1,
-        slug: 'calefaccion',
-        url: '/tienda/categoria/calefaccion-electrohogar',
+        slug: 'lavamanos-vanitorios',
+        url: '/tienda/categoria/especial-bano-lavamanos-vanitorios',
+        hold: {
+          image: '//media.easy.cl/is/image/EasySA/Caluga16042021--1'
+        }
       }).caluga--1
 
       +caluga({
         id: 2,
-        slug: 'muebles-oficina',
-        url: '/tienda/categoria/muebles-de-oficina?cur_page=1&cur_view=grid&bc_links=muebles&bc_names=Muebles',
+        slug: 'wc-sanitarios',
+        url: '/tienda/categoria/especial-bano-wc-sanitarios',
+        hold: {
+          image: '//media.easy.cl/is/image/EasySA/Caluga16042021--2'
+        }
       }).caluga--1
 
       +caluga({
         id: 3,
-        slug: 'puertas-interior',
-        url: '/tienda/categoria/puertas-de-interior',
+        slug: 'limpieza',
+        url: '/tienda/categoria/especial-bano-limpieza',
+        hold: {
+          image: '//media.easy.cl/is/image/EasySA/Caluga16042021--3'
+        }
       }).caluga--1
 
       +caluga({
         id: 4,
-        slug: 'casas-perro',
-        url: '/tienda/categoria/mascotas-perros-accesorios-casas',
+        slug: 'textil-bano',
+        url: '/tienda/categoria/especial-bano-textil',
+        hold: {
+          image: '//media.easy.cl/is/image/EasySA/Caluga16042021--4'
+        }
       }).caluga--1
 
   // HUINCHA 2
@@ -208,32 +220,32 @@ mixin huincha(item, mobile = true)
       +caluga({
         id: 5,
         mobile: true,
-        slug: 'futones',
-        url: '/tienda/categoria/futones-5'
+        slug: 'camas-colchon',
+        url: '/tienda/categoria/camas-y-colchones-8',
       }).caluga--3
       +caluga({
         id: 6,
         mobile: false,
-        slug: 'muebles-cocina',
-        url: '/tienda/categoria/mueble-cocina'
+        slug: 'Calefaccion',
+        url: '/tienda/categoria/calefaccion-electrohogar',
       }, false).caluga--1
 
     // FILA CALUGAS 3
     .calugas__container
       +caluga({
         id: 7,
-        slug: 'baterias-cocina',
-        url: '/tienda/categoria/baterias-cocina'
+        slug: 'baterias-automovil',
+        url: '/tienda/categoria/baterias-autos'
       }, false).caluga--2-5
       +caluga({
         id: 8,
-        slug: 'electrodomesticos',
-        url: '/tienda/categoria/electrodomesticos-electrohogar?fltr_brand.keyword=Nex&cur_page=1&cur_view=grid&bc_links=Electrohogar-climatizacion&bc_names=Electrohogar+y+Climatizaci%C3%B3n&cur_pos=',
+        slug: 'closet',
+        url: '/tienda/categoria/closet--1?bc_names=Muebles|Muebles%20de%20Dormitorio&bc_links=muebles|muebles-de-dormitorio-',
       }, false).caluga--2-5
       +caluga({
         id: 9,
-        slug: 'iluminacion-interior',
-        url: '/tienda/categoria/iluminacion-de-interior'
+        slug: 'ventanas-termopanel',
+        url: '/tienda/categoria/ventanas-termopanel-',
       }, false).caluga--1
 
   // HUINCHA 3
@@ -278,23 +290,23 @@ mixin huincha(item, mobile = true)
     .calugas__container
       +caluga({
         id: 10,
-        slug: 'silla-colgante',
-        url: '/tienda/producto/silla-colgante-l-chocolate-el-barco-1247327p'
+        slug: 'maquinaria-jardin',
+        url: '/tienda/categoria/herramientas-de-jardin',
       }, false).caluga--1
       +caluga({
         id: 11,
-        slug: 'porcelanato',
-        url: '/tienda/producto/porcelanato-60-x-60-cm-sal-sol-palazzo-trav-1-44m2-1130699p'
+        slug: 'ceramica',
+        url: '/tienda/producto/ceramica-marmoleada-30-x-20-cm-1-50-m-2-victoria-baldara-821270p',
       }, false).caluga--1
       +caluga({
         id: 12,
-        slug: 'refrigerador',
-        url: '/tienda/producto/side-by-side-no-frost-527-litros-mrsbs-5300-inox-midea-1197837p'
+        slug: 'calefont',
+        url: '/tienda/producto/calefont-mademsa-essential-10-eco-gl-1293112p',
       }, false).caluga--1
       +caluga({
         id: 13,
-        slug: 'sierra-circular',
-        url: '/tienda/producto/sierra-circular-1400-w-cs1004-b2c-black-decker-1174383p'
+        slug: 'alargadores-extensiones',
+        url: '/tienda/categoria/extensiones-y-alargadores',
       }, false).caluga--1
 
     // FILA CALUGAS 5
@@ -302,12 +314,12 @@ mixin huincha(item, mobile = true)
       +caluga({
         id: 14,
         mobile: true,
-        slug: 'alargadores-extensiones',
-        url: '/tienda/categoria/extensiones-y-alargadores'
+        slug: 'iluminacion-interior',
+        url: '/tienda/categoria/iluminacion-de-interior?cur_page=1&cur_view=grid&bc_links=decoracion-iluminacion|iluminacion&bc_names=Decoraci%C3%B3n+e+Iluminaci%C3%B3n|Iluminaci%C3%B3n',
       }).caluga--2
       +caluga({
         id: 15,
         mobile: true,
-        slug: 'parrillas-gas',
-        url: '/tienda/categoria/parrillas-a-gas-'
+        slug: 'bodegas-gabinetes',
+        url: '/tienda/categoria/bodegas-gabinetes',
       }).caluga--2
