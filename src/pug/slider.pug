@@ -1,7 +1,7 @@
 //! SLIDER
 
 mixin sliderItem(slide, key)
-  .slider__item(data-banner-duration="5s")
+  div(data-banner-duration="5s")
     a(href=slide.url target="_self" class=`${slide.id ? `slider-slide-${slide.id}`: ''}` value=slide.slug)
       picture 
         if !slide.hold
@@ -17,65 +17,47 @@ mixin sliderItem(slide, key)
   const slider = [
     {
       id: 1,
-      name: 'Adelanto Calefacción',
-      slug: 'adelanto-calefaccion',
+      name: 'Especial Iluminación',
+      slug: 'especial-iluminacion',
+      url: '/tienda/categoria/especial-iluminacion',
+      hold: {
+        image: 'https://media.easy.cl/is/image/EasySA/Banner20052021--7',
+        imageM: 'https://media.easy.cl/is/image/EasySA/Banner20052021--7M',
+      }
+    },
+    {
+      id: 2,
+      name: 'Especial Calefacción',
+      slug: 'especial-calefaccion',
       url: '/tienda/categoria/especial-calefaccion',
       hold : {
         image: '//media.easy.cl/is/image/EasySA/Banner29042021-03',
-        imageM: '://media.easy.cl/is/image/EasySA/Banner29042021-03M'
-      }
-    },
-    {
-      id: 2,
-      name: 'Especial Aseo & Limpieza',
-      slug: 'especial-aseo-limpieza',
-      url: '/tienda/categoria/especial-aseo-limpieza',
-      hold: {
-        image: '//media.easy.cl/is/image/EasySA/Banner30042021--1',
-        imageM: '//media.easy.cl/is/image/EasySA/Banner30042021--1M'
-      }
-    },
-    {
-      id: 2,
-      name: 'Especial Mascotas',
-      slug: 'especial-mascotas',
-      url: '/tienda/categoria/especial-mascotas',
-      hold: {
-        image: '//media.easy.cl/is/image/EasySA/Banner30042021--2',
-        imageM: '//media.easy.cl/is/image/EasySA/Banner30042021--2M'
+        imageM: '//media.easy.cl/is/image/EasySA/Banner29042021-03M'
       }
     },
     {
       id: 3,
-      name: 'Especial Rosen',
-      slug: 'especial-rosen',
-      url: '/tienda/categoria/especial-rosen',
+      name: 'Herramientas',
+      slug: 'herramientas',
+      url: '/tienda/categoria/herramientas',
     },
     {
       id: 4,
-      name: 'Especial Midea',
-      slug: 'especiañ-midea',
-      url: '/tienda/categoria/especial-midea-1?cur_page=1&cur_view=grid',
-      hold: {
-        image: '//media.easy.cl/is/image/EasySA/Banner06052021-04',
-        imageM: '//media.easy.cl/is/image/EasySA/Banner06052021-04M'
-      }
+      name: 'Maquinaria de Jardín',
+      slug: 'maquinaria-jardin',
+      url: '/tienda/categoria/herramientas-de-jardin',
     },
     {
       id: 5,
-      name: 'Pisos Flotantes',
-      slug: 'pisos-flotantes',
-      url: '/tienda/categoria/pisos-flotantes',
+      name: 'Alfombras',
+      slug: 'alfombras',
+      url: '/tienda/categoria/especial-alfombras-7',
     },
     {
       id: 6,
-      name: 'Especial 3M',
-      slug: 'especial-3m',
-      url: '/tienda/categoria/especial-3m',
-      hold: {
-        image: '//media.easy.cl/is/image/EasySA/Banner03052021--6',
-        imageM: '//media.easy.cl/is/image/EasySA/Banner03052021--6M'
-      }
+      name: 'Cerámicas',
+      slug: 'ceramicas',
+      url: '/tienda/categoria/ceramicas',
     },
   ]
 

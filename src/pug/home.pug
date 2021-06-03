@@ -138,26 +138,26 @@ mixin huincha(item, mobile = true)
 .contenido_calugas
 
   // HUINCHA 1
-  .huincha_seguimiento(style="width: 99%; margin: 20px auto; display: inline-block")
-    a(
-      href="//www.easy.cl/es/cl/easy-chile/tu-dispensador-termos"
-      target="_blank"
-      value="paga-tu-tarjeta"
-    )
-      picture
-        source(
-          srcset="//media.easy.cl/is/image/EasySA/Huincha-Thermos"
-          width="100%"
-          media="(min-width: 642px)"
-        )
-        source(
-          srcset="//media.easy.cl/is/image/EasySA/Huincha-ThermosM"
-          width="100%"
-        )
-        img(
-          src="//media.easy.cl/is/image/EasySA/Huincha-Thermos"
-          width="100%"
-        )
+  //- .huincha_seguimiento(style="width: 99%; margin: 20px auto; display: inline-block")
+  //-   a(
+  //-     href="//www.easy.cl/es/cl/easy-chile/tu-dispensador-termos"
+  //-     target="_blank"
+  //-     value="paga-tu-tarjeta"
+  //-   )
+  //-     picture
+  //-       source(
+  //-         srcset="//media.easy.cl/is/image/EasySA/Huincha-Thermos"
+  //-         width="100%"
+  //-         media="(min-width: 642px)"
+  //-       )
+  //-       source(
+  //-         srcset="//media.easy.cl/is/image/EasySA/Huincha-ThermosM"
+  //-         width="100%"
+  //-       )
+  //-       img(
+  //-         src="//media.easy.cl/is/image/EasySA/Huincha-Thermos"
+  //-         width="100%"
+  //-       )
 
 
   // FILA CALUGAS 1
@@ -166,36 +166,33 @@ mixin huincha(item, mobile = true)
 
       +caluga({
         id: 1,
-        slug: 'Lavadoras y Secadoras',
-        url: '/tienda/categoria/especial-aseo-limpieza-lavadoras-secadoras',
-        hold: {
-          image: '//media.easy.cl/is/image/EasySA/Caluga26042021--1'
-        }
+        slug: 'closet',
+        url: '/tienda/categoria/closet--1',
       }).caluga--1
 
       +caluga({
         id: 2,
-        slug: 'Aspiradoras',
-        url: '/tienda/categoria/especial-aseo-limpieza-aspiradoras',
+        slug: 'calefaccion-electrica',
+        url: '/tienda/categoria/especial-calefaccion-estufas-electricas',
       }).caluga--1
 
       +caluga({
         id: 3,
-        slug: 'Organización de Loggia',
-        url: '/tienda/categoria/especial-aseo-limpieza-organizacion-loggia',
-        hold: {
-          image: '//media.easy.cl/is/image/EasySA/Caluga26042021--3'
-        }
+        slug: 'rollers-persianas',
+        url: '/tienda/categoria/especial-rollers-y-persianas-8',
       }).caluga--1
 
       +caluga({
         id: 4,
-        slug: 'Basureros y Contenedores',
-        url: '/tienda/categoria/especial-aseo-limpieza-basureros-contenedores',
-        hold: {
-          image: '//media.easy.cl/is/image/EasySA/Caluga26042021--4'
-        }
+        slug: 'parrillas-accesorios',
+        url: '/tienda/categoria/parrillas-y-accesorios',
       }).caluga--1
+
+
+
+
+
+
 
   // HUINCHA 2
   <div class="huincha_seguimiento" style="width: 99%; margin: 20px auto; display: inline-block">
@@ -208,38 +205,17 @@ mixin huincha(item, mobile = true)
     </a>
   </div>
 
+
+
+
+
   .section
 
 
+    //- .title
+    //-   h2 Especial Calefacción
 
 
-
-
-    .title
-      h2 Especial Mascotas
-
-    // FILA CALUGAS 5
-    .calugas__container
-      +caluga({
-        id: 16,
-        mobile: true,
-        slug: 'especial-mascotas-camas',
-        url: '/tienda/categoria/especial-mascotas-camas',
-        hold: {
-          image: '//media.easy.cl/is/image/EasySA//Caluga03052021--16',
-          imageM: '//media.easy.cl/is/image/EasySA//Caluga03052021--16M'
-        }                       
-      }).caluga--2
-      +caluga({
-        id: 17,
-        mobile: true,
-        slug: 'especial-mascotas-casas',
-        url: '/tienda/categoria/especial-mascotas-casas',
-        hold: {
-          image: '//media.easy.cl/is/image/EasySA//Caluga03052021--17',
-          imageM: '//media.easy.cl/is/image/EasySA//Caluga03052021--17M'
-        }
-      }).caluga--2
 
 
 
@@ -249,20 +225,26 @@ mixin huincha(item, mobile = true)
     .title
       h2 Renueva tus espacios
 
+
+
+
     // FILA CALUGAS 2
     .calugas__container
       +caluga({
         id: 5,
         mobile: true,
-        slug: 'closet',
-        url: '/tienda/categoria/closet--1',
+        slug: 'camas-colchones',
+        url: '/tienda/categoria/camas-y-colchones-8',
       }).caluga--3
       +caluga({
         id: 6,
         mobile: false,
-        slug: 'linea-blanca',
-        url: '/tienda/categoria/destacado-linea-blanca',
+        slug: 'puertas-exterior',
+        url: '/tienda/categoria/puertas-de-exterior-0',
       }, false).caluga--1
+
+
+
 
 
 
@@ -270,19 +252,25 @@ mixin huincha(item, mobile = true)
     .calugas__container
       +caluga({
         id: 7,
-        slug: 'electrodomesticos',
-        url: '/tienda/categoria/electrodomesticos-electrohogar'
+        slug: 'purificador-agua',
+        url: '/tienda/categoria/Filtros-de-agua'
       }, false).caluga--2-5
       +caluga({
         id: 8,
-        slug: 'muebles-oficina',
-        url: '/tienda/categoria/muebles-de-oficina?cur_page=1&cur_view=grid&bc_links=muebles&bc_names=Mueblesr',
+        slug: 'plantas-flores-artificiales',
+        url: '/tienda/categoria/plantas-y-flores-atificiales',
       }, false).caluga--2-5
       +caluga({
         id: 9,
-        slug: 'puertas-interior',
-        url: '/tienda/categoria/puertas-de-interior',
+        slug: 'electrodomesticos',
+        url: '/tienda/categoria/electrodomesticos-electrohogar',
       }, false).caluga--1
+
+
+
+
+
+      
 
   // HUINCHA 3
   .section
@@ -318,44 +306,59 @@ mixin huincha(item, mobile = true)
                 title="paga-tu-tarjeta"
                 )
 
+
+
+
+
+
   .section
     .title
       h2 Destacados
+
+
+
+
 
     // FILA CALUGAS 4
     .calugas__container
       +caluga({
         id: 10,
-        slug: 'parrilla-gas',
-        url: '/tienda/producto/parrilla-a-gas-2-quemadores-performance-ir300-char-broil-1167471p',
+        slug: 'kit-cocina',
+        url: '/tienda/producto/1306963p',
       }, false).caluga--1
       +caluga({
         id: 11,
-        slug: 'licuadora',
-        url: '/tienda/producto/licuadora-personal-600-ml-expert-nutri-fit-oster-1261070p',
+        slug: 'rack-tv',
+        url: '/tienda/producto/1292818p',
       }, false).caluga--1
       +caluga({
         id: 12,
-        slug: 'porcelanato',
-        url: '/tienda/producto/porcelanato-60-x-60-cm-sal-sol-palazzo-liso-1-44m2-1130998p',
+        slug: 'licuadora-personal',
+        url: '/tienda/producto/licuadora-personal-600-ml-expert-nutri-fit-oster-1261070p',
       }, false).caluga--1
       +caluga({
         id: 13,
-        slug: 'neumaticos',
-        url: '/tienda/categoria/neumaticos-6',
+        slug: 'sierra-banco',
+        url: '/tienda/producto/sierra-de-banco-101800-w-tc-ts-254-eco-1311879p',
       }, false).caluga--1
+
+
+
+
+
+
 
     // FILA CALUGAS 5
     .calugas__container
       +caluga({
         id: 14,
         mobile: true,
-        slug: 'iluminacion-interior',
-        url: '/tienda/categoria/iluminacion-de-interior',
+        slug: 'esmalte-agua',
+        url: '/tienda/categoria/esmalte-agua',
       }).caluga--2
       +caluga({
         id: 15,
         mobile: true,
-        slug: 'proteccion-sanitaria',
-        url: '/tienda/categoria/ferreteria-proteccion-sanitaria',
+        slug: 'cabinas-duchas',
+        url: '/tienda/categoria/cabinas-duchas',
       }).caluga--2
