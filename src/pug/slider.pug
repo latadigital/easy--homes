@@ -2,7 +2,7 @@
 
 mixin sliderItem(slide, key)
   div(data-banner-duration="5s")
-    a(href=slide.url target="_self" class=`${slide.id ? `slider-slide-${slide.id}`: ''}` value=slide.slug)
+    a(href=slide.url target=`${slide.target || '_self'}` class=`${slide.id ? `slider-slide-${slide.id}`: ''}` value=slide.slug)
       picture 
         if !slide.hold
           source(@SRCSET@=`@MEDIA_PATH@Banner@HOME_DATE@--${slide.id}@FILE_TYPE@` media="(min-width: 642px)")
@@ -16,49 +16,41 @@ mixin sliderItem(slide, key)
 -
   const slider = [
     {
-      id: 1,
-      name: 'Especial Iluminación',
-      slug: 'especial-iluminacion',
-      url: '/tienda/categoria/especial-iluminacion',
-      hold: {
-        image: 'https://media.easy.cl/is/image/EasySA/Banner20052021--7',
-        imageM: 'https://media.easy.cl/is/image/EasySA/Banner20052021--7M',
-      }
-    },
-    {
       id: 2,
       name: 'Especial Calefacción',
       slug: 'especial-calefaccion',
       url: '/tienda/categoria/especial-calefaccion',
-      hold : {
-        image: '//media.easy.cl/is/image/EasySA/Banner29042021-03',
-        imageM: '//media.easy.cl/is/image/EasySA/Banner29042021-03M'
-      }
     },
     {
       id: 3,
+      name: 'Dormitorio',
+      slug: 'dormitorio',
+      url: '/tienda/categoria/ofertas-dormitorio--',
+    },
+    {
+      id: 5,
       name: 'Herramientas',
       slug: 'herramientas',
       url: '/tienda/categoria/herramientas',
     },
     {
-      id: 4,
-      name: 'Maquinaria de Jardín',
-      slug: 'maquinaria-jardin',
-      url: '/tienda/categoria/herramientas-de-jardin',
-    },
-    {
-      id: 5,
-      name: 'Alfombras',
-      slug: 'alfombras',
-      url: '/tienda/categoria/especial-alfombras-7',
-    },
-    {
       id: 6,
-      name: 'Cerámicas',
-      slug: 'ceramicas',
-      url: '/tienda/categoria/ceramicas',
+      name: 'Pisos Flotantes',
+      slug: 'piso-flotantes',
+      url: '/tienda/categoria/piso-flotantes',
     },
+    {
+      id: 7,
+      name: 'Bodegas y Gabinetes',
+      slug: 'bodegas-gabinetes',
+      url: '/tienda/categoria/bodegas-gabinetes'
+    },
+    {
+      id: 8,
+      name: 'Muebles de Cocina',
+      slug: 'mueble-cocina',
+      url: '/tienda/categoria/mueble-cocina',
+    }
   ]
 
 .slider
