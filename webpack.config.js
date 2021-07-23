@@ -7,7 +7,7 @@ const BeautifyHtmlWebpackPlugin = require('beautify-html-webpack-plugin');
 //   path: path.join(__dirname, '/.env'),
 // });
 
-const HOME_DATE = '19072021';
+const HOME_DATE = '26072021';
 
 const isProduction =
   process.argv[process.argv.indexOf('--mode') + 1] === 'production';
@@ -16,6 +16,9 @@ const MEDIA_PATH = isProduction
   ? '//media.easy.cl/is/image/EasySA/'
   : `/assets/${HOME_DATE}/`;
 const FILE_TYPE = isProduction ? '' : '.png';
+const STAGE_URL = isProduction
+  ? ''
+  : 'https://stage1.easy.cl';
 
 const HTMLS = ['slider', 'home'];
 
@@ -29,6 +32,7 @@ const HTML = {
           { search: /@HOME_DATE@/g, replace: HOME_DATE },
           { search: /@MEDIA_PATH@/g, replace: MEDIA_PATH },
           { search: /@FILE_TYPE@/g, replace: FILE_TYPE },
+          { search: /@STAGE_URL@/g, replace: STAGE_URL },
           { search: /@SRC@/g, replace: 'src' },
           { search: /@SRCSET@/g, replace: 'srcset' },
         ],

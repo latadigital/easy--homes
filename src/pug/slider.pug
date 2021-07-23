@@ -2,7 +2,7 @@
 
 mixin sliderItem(slide, key)
   div(data-banner-duration="5s")
-    a(href=slide.url target=`${slide.target || '_self'}` class=`${slide.id ? `slider-slide-${slide.id}`: ''}` value=slide.slug)
+    a(href!=`@STAGE_URL@${slide.url}` target=`${slide.target || '_self'}` class=`${slide.id ? `slider-slide-${slide.id}`: ''}` value=slide.slug)
       picture 
         if !slide.hold
           source(@SRCSET@=`@MEDIA_PATH@Banner@HOME_DATE@--${slide.id}@FILE_TYPE@` media="(min-width: 642px)")
@@ -17,19 +17,15 @@ mixin sliderItem(slide, key)
   const slider = [
     {
       id: 1,
-      name: 'Especial Cocina y Comedor',
-      slug: 'especial-cocina-comedor',
-      url: '/tienda/categoria/especial-cocina-comedor',
-      hold: {
-        image: 'https://media.easy.cl/is/image/EasySA/Banner08072021--1',
-        imageM: 'https://media.easy.cl/is/image/EasySA/Banner08072021--1M'
-      }
+      name: 'Especial Discípulo del Chef',
+      slug: 'especial-discipulo-chef',
+      url: '/tienda/categoria/especial-discipulo-chef'
     },
     {
       id: 2,
-      name: 'Muebles de Oficina',
-      slug: 'muebles-oficina',
-      url: '/tienda/categoria/muebles-de-oficina',
+      name: 'Juegos de Comedor',
+      slug: 'juegos-comedor',
+      url: '/tienda/categoria/mesas-juegos-comedor',
     },
     {
       id: 3,
@@ -39,37 +35,27 @@ mixin sliderItem(slide, key)
     },
     {
       id: 4,
-      name: 'Pisos Flotantes',
-      slug: 'piso-flotantes',
-      url: '/tienda/categoria/piso-flotantes',
+      name: 'Limpieza',
+      slug: 'limpieza',
+      url: '/tienda/categoria/limpieza',
     },
     {
       id: 5,
-      name: 'Herramientas',
-      slug: 'herramientas',
-      url: '/tienda/categoria/herramientas',
+      name: 'Cerámicas',
+      slug: 'ceramicas',
+      url: '/tienda/categoria/ceramicas',
     },
     {
       id: 6,
-      name: 'Cajas Organizadoras',
-      slug: 'cajas-organizadoras',
-      url: '/tienda/categoria/cajas-organizadoras--',
+      name: 'Herramientas eléctricas',
+      slug: 'herramientas-electricas',
+      url: '/tienda/categoria/herramientas-electricas',
     },
     {
       id: 7,
-      name: 'Bodegas y Gabinetes',
-      slug: 'bodegas-gabinetes',
-      url: '/tienda/categoria/bodegas-gabinetes',
-    },
-    {
-      id: 8,
-      name: 'Ratoncitos',
-      slug: 'ratoncitos-dulces-suenos',
-      url: '/tienda/categoria/ratoncitos-dulces-suenos',
-      hold: {
-        image: 'https://media.easy.cl/is/image/EasySA/Banner06072021--1',
-        imageM: 'https://media.easy.cl/is/image/EasySA/Banner06072021--1M'
-      }
+      name: 'Maquinaria de Jardín',
+      slug: 'maquinaria-jardin',
+      url: '/tienda/categoria/herramientas-de-jardin',
     }
   ]
 

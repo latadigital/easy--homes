@@ -69,7 +69,7 @@ style.
 
 mixin caluga(item)
   div&attributes(attributes).caluga
-    a(href!=item.url value=item.slug)
+    a(href!=`@STAGE_URL@${item.url}` value=item.slug)
       .item(
         style="border: 1px solid #ddd; border-bottom: none;"
       )
@@ -107,7 +107,7 @@ mixin caluga(item)
             )
 
 mixin huincha(item, mobile = true)
-  a(href!=item.url)&attributes(attributes)
+  a(href!=`@STAGE_URL@${item.url}`)&attributes(attributes)
     .item(
       style="border: 1px solid #ddd; border-bottom: none;"
     )
@@ -166,26 +166,26 @@ mixin huincha(item, mobile = true)
 
       +caluga({
         id: 1,
-        slug: 'muebles-comedor',
-        url: '/tienda/categoria/especial-cocina-comedor-muebles-comedor',
+        slug: 'muebles-de-oficina',
+        url: '/tienda/categoria/muebles-de-oficina',
       }).caluga--1
 
       +caluga({
         id: 2,
-        slug: 'cocina-gas',
-        url: '/tienda/categoria/cocina-a-gas',
+        slug: 'lavado-planchado-electrohogar',
+        url: '/tienda/categoria/lavado-planchado-electrohogar',
       }).caluga--1
 
       +caluga({
         id: 3,
-        slug: 'rollers-persianas',
-        url: '/categoria/especial-rollers-y-persianas-8',
+        slug: 'herramientas-de-banco',
+        url: '/tienda/categoria/herramientas-de-banco',
       }).caluga--1
 
       +caluga({
         id: 4,
-        slug: 'herramientas-de-banco',
-        url: '/tienda/categoria/herramientas-de-banco',
+        slug: 'juegos',
+        url: '/tienda/categoria/juegos-01',
       }).caluga--1
 
 
@@ -196,7 +196,7 @@ mixin huincha(item, mobile = true)
 
   // HUINCHA 2
   <div class="huincha_seguimiento" style="width: 99%; margin: 20px auto; display: inline-block">
-    <a href="/es/cl/easy-chile/legal-doble-puntos" value="paga-tu-tarjeta" target="_blank">
+    <a href="@STAGE_URL@/es/cl/easy-chile/legal-doble-puntos" value="paga-tu-tarjeta" target="_blank">
       <picture>
         <source srcset="//media.easy.cl/is/image/EasySA/HuinchaPuntos_08112020-02" width="100%" media="(min-width: 642px)"/>
         <source srcset="//media.easy.cl/is/image/EasySA/HuinchaPuntos_08112020M-02" width="100%" />
@@ -239,8 +239,8 @@ mixin huincha(item, mobile = true)
       +caluga({
         id: 6,
         mobile: false,
-        slug: 'ventanas-termopanel',
-        url: '/tienda/categoria/ventanas-termopanel-',
+        slug: 'cajas-organizadoras',
+        url: '/tienda/categoria/cajas-organizadoras--',
       }, false).caluga--1
 
 
@@ -252,18 +252,18 @@ mixin huincha(item, mobile = true)
     .calugas__container
       +caluga({
         id: 7,
-        slug: 'calefont',
-        url: '/tienda/producto/1095230p'
+        slug: 'audio',
+        url: '/tienda/categoria/audio-electrohogar',
       }, false).caluga--2-5
       +caluga({
         id: 8,
-        slug: 'casas-perros',
-        url: '/tienda/categoria/mascotas-perros-accesorios-casas',
+        slug: 'ventanas-termopanel',
+        url: '/tienda/categoria/ventanas-termopanel-',
       }, false).caluga--2-5
       +caluga({
         id: 9,
-        slug: 'repisas-estantes',
-        url: '/tienda/categoria/repisas-estantes-',
+        slug: 'ferreteria-proteccion-sanitaria',
+        url: '/tienda/categoria/ferreteria-proteccion-sanitaria',
       }, false).caluga--1
 
 
@@ -279,7 +279,7 @@ mixin huincha(item, mobile = true)
         a(class="calugas-categoria-superior"
           target="_blank"
           value="super-Avance-cencosud"
-          href="/es/cl/easy-chile/pide-tu-super-avance-tarjeta-cencosud-scotiabank"
+          href="@STAGE_URL@/es/cl/easy-chile/pide-tu-super-avance-tarjeta-cencosud-scotiabank"
           )
           .item
             picture
@@ -323,23 +323,23 @@ mixin huincha(item, mobile = true)
     .calugas__container
       +caluga({
         id: 10,
-        slug: 'closet',
-        url: '/tienda/categoria/closet--1',
+        slug: 'licuadora-personal-600-ml-expert-nutri-fit-oster',
+        url: '/tienda/producto/licuadora-personal-600-ml-expert-nutri-fit-oster-1261070p',
       }, false).caluga--1
       +caluga({
         id: 11,
-        slug: 'audio',
-        url: '/tienda/categoria/audio-electrohogar',
+        slug: 'taladro-inalam-tc-cd-18-35-li--1x15-ah',
+        url: '/tienda/producto/taladro-inalam-tc-cd-18-35-li--1x15-ah-1311876p',
       }, false).caluga--1
       +caluga({
         id: 12,
-        slug: 'behr',
-        url: '/tienda/categoria/ofertas-terminaciones-construccion?fltr_brand.keyword=Behr',
+        slug: 'porcelanato-60-x-60-cm-1-44-m-2-super-negro-plus-baldara',
+        url: '/tienda/producto/porcelanato-60-x-60-cm-1-44-m-2-super-negro-plus-baldara-1107208p',
       }, false).caluga--1
       +caluga({
         id: 13,
-        slug: 'taca-taca',
-        url: '/tienda/producto/1212292p',
+        slug: 'kit-cocina',
+        url: '/tienda/producto/1306963p',
       }, false).caluga--1
 
 
@@ -353,12 +353,12 @@ mixin huincha(item, mobile = true)
       +caluga({
         id: 14,
         mobile: true,
-        slug: 'proteccion-sanitaria',
-        url: '/tienda/categoria/ferreteria-proteccion-sanitaria',
+        slug: 'iluminacion-de-interior',
+        url: '/tienda/categoria/iluminacion-de-interior',
       }).caluga--2
       +caluga({
         id: 15,
         mobile: true,
-        slug: 'puertas-exterior',
-        url: '/tienda/categoria/puertas-de-exterior-0',
+        slug: 'mascotas-perros-accesorios-casas',
+        url: '/tienda/categoria/mascotas-perros-accesorios-casas',
       }).caluga--2
