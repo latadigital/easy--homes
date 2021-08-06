@@ -7,7 +7,7 @@ const BeautifyHtmlWebpackPlugin = require('beautify-html-webpack-plugin');
 //   path: path.join(__dirname, '/.env'),
 // });
 
-const HOME_DATE = '26072021';
+const HOME_DATE = '09082021';
 
 const isProduction =
   process.argv[process.argv.indexOf('--mode') + 1] === 'production';
@@ -47,7 +47,7 @@ const HTML = {
 
 const config = (mode) => {
   return {
-    entry: './src/index.js',
+    entry: `./src/${HOME_DATE}.js`,
     output: {
       filename: 'main.js',
       publicPath: '/',
