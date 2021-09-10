@@ -2,15 +2,12 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BeautifyHtmlWebpackPlugin = require('beautify-html-webpack-plugin');
-// const HtmlReplaceWebpackPlugin = require('html-replace-webpack-plugin');
-// const dotenv = require('dotenv').config({
-//   path: path.join(__dirname, '/.env'),
-// });
 
-const HOME_DATE = '23082021';
+const HOME_DATE = '13092021';
 
 const isProduction =
-  process.argv[process.argv.indexOf('--mode') + 1] === 'production';
+  process.argv[process.argv.indexOf('--mode') + 1] ===
+  'production';
 
 const MEDIA_PATH = isProduction
   ? '//media.easy.cl/is/image/EasySA/'
@@ -49,7 +46,7 @@ const config = (mode) => {
   return {
     entry: `./src/${HOME_DATE}.js`,
     output: {
-      filename: 'main.js',
+      filename: `${HOME_DATE}.js`,
       publicPath: '/',
       path: path.resolve(__dirname, './build'),
       clean: true,
