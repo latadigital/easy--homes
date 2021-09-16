@@ -3,7 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BeautifyHtmlWebpackPlugin = require('beautify-html-webpack-plugin');
 
-const HOME_DATE = '13092021';
+const HOME_DATE = '20092021';
 
 const isProduction =
   process.argv[process.argv.indexOf('--mode') + 1] ===
@@ -52,10 +52,9 @@ const config = (mode) => {
       clean: true,
     },
     devServer: {
-      open: true,
       port: 3500,
       liveReload: true,
-      openPage: `${HOME_DATE}/${HOME_DATE}.html`,
+      open: `${HOME_DATE}/${HOME_DATE}.html`,
     },
     module: {
       rules: [HTML],
