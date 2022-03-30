@@ -3,7 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BeautifyHtmlWebpackPlugin = require('beautify-html-webpack-plugin');
 
-const HOME_DATE = '10032022';
+const HOME_DATE = '23032022';
 
 const isProduction =
   process.argv[process.argv.indexOf('--mode') + 1] ===

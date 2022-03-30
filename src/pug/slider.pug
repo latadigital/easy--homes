@@ -46,38 +46,45 @@ mixin sliderItem(slide, key)
       name: 'Baño y Limpieza',
       slug: 'dias-hogar-bano-limpieza',
       url: '/tienda/categoria/dias-hogar-bano-limpieza--'
-    },
-    {
-      id: 5,
-      name: 'Herramientas',
-      slug: 'dias-hogar-herramientas',
-      url: '/tienda/categoria/dias-hogar-herramientas',
-      //- hold: {
-      //-   image: 'https://media.easy.cl/is/image/EasySA/Banner06012022--03',
-      //-   imageM: 'https://media.easy.cl/is/image/EasySA/Banner06012022--03M'
-      //- }
-    },
-    {
-      id: 6,
-      name: 'Pisos flotantes',
-      slug: 'piso-flotantes',
-      url: '/tienda/categoria/piso-flotantes',
-      //- hold: {
-      //-   image: 'https://media.easy.cl/is/image/EasySA/Banner08022022--1',
-      //-   imageM: 'https://media.easy.cl/is/image/EasySA/Banner08022022--1M'
-      //- }
-    },
-    {
-      id: 7,
-      name: 'Aspirado y Limpieza',
-      slug: 'especial-aspirado-limpieza',
-      url: '/tienda/categoria/especial-aspirado-limpieza',
-      //- hold: {
-      //-   image: 'https://media.easy.cl/is/image/EasySA/Banner06012022--1',
-      //-   imageM: 'https://media.easy.cl/is/image/EasySA/Banner06012022--1M'
-      //- }
     }
   ]
+
+style.
+
+  .slider {
+    max-height: none;
+  }
+
+  .slider .slick-slide img {
+    max-height: none;
+  }
+
+  .slider-wrapper {
+    max-height: none;
+    height: auto;
+    margin-bottom: 30px;
+  }
+
+  .slider-progress {
+    bottom: 36px;
+  }
+
+
+  .slider-nav-text {
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    height: auto;
+    background-color: rgba(0,0,0,.8);
+    opacity: 1;
+    padding: 10px;
+  }
+
+  .slide-text {
+    line-height: auto;
+    margin: 0;
+  }
+
 
 .slider
   each slide in slider

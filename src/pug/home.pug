@@ -11,16 +11,36 @@ style.
     font-weight: 300;
   }
   */
+
+  .item:hover img {
+    transform: none;
+  }
+
   .calugas__container {
     display: flex;
     gap: 10px;
+    margin-bottom:30px;
   }
   .caluga img {
     display: block;
+    border: 1px solid rgba(0,0,0,.1);
+    /*border-radius: 10px;*/
   }
   .caluga {
-    margin-bottom: 40px;
+    margin-bottom: 10px;
+    /*border-radius: 10px;*/
+    overflow: hidden;
+    transition: all ease 200ms;
   }
+
+  .caluga a {
+    display: block;
+  }
+
+  .caluga:hover {
+    opacity: .8;
+  }
+
   .caluga--1 {
     width: 25%;
   }
@@ -70,9 +90,7 @@ style.
 mixin caluga(item)
   div&attributes(attributes).caluga
     a(href!=`@STAGE_URL@${item.url}` value=item.slug)
-      .item(
-        style="border: 1px solid #ddd; border-bottom: none;"
-      )
+      .item
         if !item.hold
           picture
             if item.mobile

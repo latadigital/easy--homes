@@ -1,4 +1,4 @@
-- const itemsSlider = 8;
+- const itemsSlider = 4;
 
 
 <!DOCTYPE html>
@@ -9,7 +9,55 @@ html(lang="es")
     title Home Easy | @HOME_DATE@
     link(rel="stylesheet" href="/assets/style.css")
 
+
     style.
+
+      .header {
+        height: 175px;
+        border-top:30px #333 solid;
+        background: #fff;
+        border-bottom: none;
+      }
+
+      .header__container {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        max-width: 1366px;
+        margin: auto;
+        height: 100%;
+      }
+
+      .header__item--logo {
+        width: 85px;
+        height: 85px;
+        border-radius: 50%;
+        background: #ef4036;
+        border: 4px solid #fff;
+        box-shadow: 0 0 6px rgba(0,0,0,.2);
+      }
+
+      .header__item--buscador {
+        background: #eee;
+        border-radius: 6px;
+        border-right: 40px solid #ef4036;
+        height: 40px;
+        width: 100%;
+        max-width: 800px;
+      }
+
+
+      .huincha-top {
+        height: 40px;
+        background: #CCC;
+      }
+
+      .footer {
+        border-top: 100px hsla(0,0%,93.3%,.93) solid;
+        background: #fbfbfb;
+        height: 50vh;
+      }
+
       .slider {
         max-height: none;
         display:flex;
@@ -19,6 +67,7 @@ html(lang="es")
         width: 100%;
         overflow: hidden;
         overflow-x: auto;
+        margin-bottom: 40px;
       }
       .slider__item {
         width: 100%;
@@ -41,7 +90,13 @@ html(lang="es")
       }
 
   body
+    .header
+      .header__container
+        .header__item.header__item--logo
+        .header__item.header__item--buscador
+    .huincha-top
     .route
       .slider__container  
         include ./slider
       include ./home
+    .footer
