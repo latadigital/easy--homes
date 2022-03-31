@@ -21,20 +21,28 @@ style.
     gap: 10px;
     margin-bottom:30px;
   }
-  .caluga img {
-    display: block;
-    border: 1px solid rgba(0,0,0,.1);
-    /*border-radius: 10px;*/
-  }
   .caluga {
     margin-bottom: 10px;
-    /*border-radius: 10px;*/
     overflow: hidden;
     transition: all ease 200ms;
+    display: block;
   }
 
-  .caluga a {
+  .caluga--bordered {
+    border: 1px solid rgba(0,0,0,.1);
+  }
+
+  .caluga--radius, .caluga--radius img {
+    border-radius: 10px;
+  }
+
+  /*.caluga a {
     display: block;
+  }*/
+  
+  .caluga img {
+    display: block;
+    /*border-radius: 10px;*/
   }
 
   .caluga:hover {
@@ -88,41 +96,39 @@ style.
   }
 
 mixin caluga(item)
-  div&attributes(attributes).caluga
-    a(href!=`@STAGE_URL@${item.url}` value=item.slug)
-      .item
-        if !item.hold
-          picture
-            if item.mobile
-              source(
-                @SRCSET@=`@MEDIA_PATH@/Caluga@HOME_DATE@--${item.id }@FILE_TYPE@`
-                media="(min-width: 642px)"
-              )
-              source(
-                @SRCSET@=`@MEDIA_PATH@/Caluga@HOME_DATE@--${item.id }M@FILE_TYPE@`
+  a(href!=`@STAGE_URL@${item.url}` value=item.slug class=`${item.radius ? 'caluga--radius': ''} ${item.bordered ? 'caluga--bordered': ''}`).caluga&attributes(attributes)
+    if !item.hold
+      picture
+        if item.mobile
+          source(
+            @SRCSET@=`@MEDIA_PATH@/Caluga@HOME_DATE@--${item.id }@FILE_TYPE@`
+            media="(min-width: 642px)"
+          )
+          source(
+            @SRCSET@=`@MEDIA_PATH@/Caluga@HOME_DATE@--${item.id }M@FILE_TYPE@`
 
-              )
-            img(
-              @SRC@=`@MEDIA_PATH@/Caluga@HOME_DATE@--${item.id }@FILE_TYPE@`
-              alt=item.slug
-              title=item.slug
-            )
-        if item.hold
-          picture
-            if item.mobile
-              source(
-                @SRCSET@=`${item.hold.image}`
-                media="(min-width: 642px)"
-              )
-              source(
-                @SRCSET@=`${item.hold.imageM}`
+          )
+        img(
+          @SRC@=`@MEDIA_PATH@/Caluga@HOME_DATE@--${item.id }@FILE_TYPE@`
+          alt=item.slug
+          title=item.slug
+        )
+    if item.hold
+      picture
+        if item.mobile
+          source(
+            @SRCSET@=`${item.hold.image}`
+            media="(min-width: 642px)"
+          )
+          source(
+            @SRCSET@=`${item.hold.imageM}`
 
-              )
-            img(
-              @SRC@=`${item.hold.image}`
-              alt=item.slug
-              title=item.slug
-            )
+          )
+        img(
+          @SRC@=`${item.hold.image}`
+          alt=item.slug
+          title=item.slug
+        )
 
 mixin huincha(item, mobile = true)
   a(href!=`@STAGE_URL@${item.url}`)&attributes(attributes)
@@ -186,6 +192,8 @@ mixin huincha(item, mobile = true)
         id: 1,
         slug: 'dias-hogar-closet-comodas',
         url: '/tienda/categoria/dias-hogar-closet-comodas',
+        radius: true,
+        bordered: true
       }).caluga--1
 
       +caluga({
